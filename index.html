@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherFlow</title>
+    <meta
+      name="description"
+      content="WeatherFlow is a modern weather dashboard inspired by Samsung Weather."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="bg-orb orb-1"></div>
+      <div class="bg-orb orb-2"></div>
+      <div class="bg-grid"></div>
+
+      <main class="dashboard">
+        <header class="topbar reveal">
+          <div>
+            <p class="eyebrow">Ambient weather dashboard</p>
+            <h1>WeatherFlow</h1>
+          </div>
+
+          <form class="searchbar" id="searchForm">
+            <label class="sr-only" for="cityInput">Search city</label>
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="search-icon">
+              <path
+                d="M10.5 4a6.5 6.5 0 1 0 4.09 11.55l4.43 4.43 1.41-1.41-4.43-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"
+              />
+            </svg>
+            <input
+              id="cityInput"
+              name="city"
+              type="text"
+              placeholder="Search city"
+              autocomplete="off"
+            />
+            <button type="submit">Search</button>
+          </form>
+        </header>
+
+        <section class="hero">
+          <article class="current-panel glass reveal">
+            <div class="status-row">
+              <span class="status-pill" id="weatherMood">Live conditions</span>
+            </div>
+
+            <div class="location-group">
+              <p class="today-label" id="todayLabel">Loading local time...</p>
+              <h2 id="cityName">WeatherFlow</h2>
+              <p id="weatherDescription">Search for a city to see the forecast.</p>
+            </div>
+
+            <div class="temperature-wrap" id="temperatureWrap">
+              <div class="temperature-main">
+                <span class="temperature-value" id="temperatureValue">--</span>
+                <span class="temperature-unit">°C</span>
+              </div>
+              <img
+                class="weather-icon"
+                id="weatherIcon"
+                src=""
+                alt=""
+                hidden
+              />
+            </div>
+
+            <div class="temp-range">
+              <span id="highTemp">H: --°</span>
+              <span id="lowTemp">L: --°</span>
+            </div>
+
+            <div class="metrics">
+              <div class="metric-card soft-card">
+                <p>Humidity</p>
+                <strong id="humidityValue">--%</strong>
+              </div>
+              <div class="metric-card soft-card">
+                <p>Wind</p>
+                <strong id="windValue">-- m/s</strong>
+              </div>
+              <div class="metric-card soft-card">
+                <p>Feels like</p>
+                <strong id="feelsLikeValue">--°C</strong>
+              </div>
+            </div>
+          </article>
+
+          <aside class="details-panel reveal">
+            <div class="info-card glass">
+              <p class="card-label">Conditions</p>
+              <h3 id="conditionHeadline">Ready for a calm day.</h3>
+              <p id="conditionText">
+                Live weather details will appear here once the city is loaded.
+              </p>
+            </div>
+
+            <div class="info-card glass">
+              <p class="card-label">5-day forecast</p>
+              <div class="forecast-strip" id="forecastStrip">
+                <div class="forecast-placeholder">
+                  Forecast cards will appear here.
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="footer-note reveal">
+          <p>
+            Created by Jyoti.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="./config.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

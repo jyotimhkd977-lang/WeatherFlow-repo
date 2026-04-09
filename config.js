@@ -1,0 +1,1 @@
+window.WEATHERFLOW_API_KEY = "4ff97f9fc6342c8c1cc71cb7700033f1";
